@@ -8,6 +8,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://assets.pyecharts.org/assets/v5/echarts.min.js"></script>
     <script type="text/javascript" src="https://assets.pyecharts.org/assets/v5/echarts.min.js"></script>
+    <script src="echarts.js"></script>
     <style>
     #profile{
         position: fixed; 
@@ -362,7 +363,69 @@
 
         <p>2022年底，OpenAI发布自然语言对话应用ChatGPT，并在今年3月迭代推出GPT-4，9月份更是为ChatGPT增加了“看，听，说”的功能，迅速吸引了各行业与公众的关注。全球范围内大模型风云骤起，资金、技术、人才持续涌入，科技公司布局不断，纷纷推出自家的大模型。据估算，到2030年，AIGC市场规模有望突破万亿元。</p>
     </div>
-    <div class="divcenter" style="background-image: url(imgback2.png);"><img src="AIGC产业规模.jpg" alt="" class="img1"></div>
+    <div class="divcenter" style="background-image: url(imgback2.png);">
+        <div id="main2" style="width: 600px;height:400px;"></div>
+        <script type="text/javascript">
+      // 基于准备好的dom，初始化echarts实例
+      var myChart = echarts.init(document.getElementById('main2'));
+
+      // 指定图表的配置项和数据
+      var option = {
+        title: {
+          text: 'AIGC产业规模预测'
+
+        },
+        tooltip: {},
+        legend: {
+        },
+        xAxis: {
+          data: ['2022', '2023', '2024', '2025', '2026', '2027','2028','2029','2030']
+        },
+        yAxis: [
+
+        {
+      type: 'value',
+      name: '产业规模(亿元)',
+      position: 'left',
+        axisLabel: {
+
+        formatter: '{value}'
+      },
+},
+    {
+      type: 'value',
+      name: '增长率',
+      position: 'right',
+      min:-4,
+      max:5
+    }
+       ],
+
+        series: [
+          {
+            name: '产业规模(亿元)',
+            type: 'bar',
+            yAxisIndex: 0,
+            data: [25.0, 143.0, 436.0, 1223.0, 2593.0, 4759.0,7202.0,9509.0,11441.0]
+          },
+          {
+            name: '增长率',
+            type: 'line',
+            smooth: true,
+            yAxisIndex: 1,
+            data: [0,4.70,2.04,1.81,1.12,0.84,0.51,0.32,0.20]
+          },
+
+
+
+        ]
+      };
+
+      // 使用刚指定的配置项和数据显示图表。
+      myChart.setOption(option);
+    </script>
+    
+    </div>
     <div>
     <p>“在AIGC时代，所有行业都值得用AI重塑”。受到影响的领域包括教育、金融、电商、影视、设计等，其中新闻业是受影响最为剧烈的领域之一，对于AIGC的回应也最为积极。</p>
     <p>澎湃新闻、封面新闻、上游新闻等百余家媒体机构在今年2月宣布接入AIGC产品。腾讯研究院在今年6月份围绕“ChatGPT对新闻业的影响”话题展开了一项调研，结果显示，有80%的国内新闻从业人员已使用过ChatGPT或类似产品，其中超过一半（56%）受访者认为ChatGPT（或类似工具）对自己的工作带来了实际帮助。</p>
@@ -372,7 +435,58 @@
     <p>全新的数字化生态赋予传统媒体蓬勃的发展活力，同时也催生了一批数字媒体新贵。然而，近年来流量逻辑的变迁、短视频等新媒介形态的冲击、线上广告收入的萎缩等种种因素，正在促使新闻业陷入新的困境。</p>
    <h2><p><strong>“短视频新闻业”兴起，受众注意力转移，传统新闻理念遭遇冲击</strong></p></h2> 
         <p>2023年，数据统计机构《新闻公报》（Press Gazette）发布了一份千禧年以来成立的25家媒体资讯公司排名榜单，其中Facebook位居榜首，TikTok紧随其后。社交媒体的影响力不言而喻，以TikTok为代表的短视频平台的崛起，对新闻业发展趋势产生了深刻影响。</p>
-        <div class="divcenter"><img src="短视频data.jpg" alt="" class="img2" style="height: 270px;"></div>
+    
+        <div id="main" style="width: 600px;height:400px; margin: 0 auto; "></div>
+    <script type="text/javascript">
+      // 基于准备好的dom，初始化echarts实例
+      var myChart = echarts.init(document.getElementById('main'));
+
+      // 指定图表的配置项和数据
+      var option = {
+        title: {
+          text: '新网民使用的网络应用统计',
+
+        },
+        tooltip: {},
+        legend: {
+
+        },
+        yAxis: {
+
+            name: '类型',
+            data: ['上网看影视，综艺', '看直播', '搜索引擎', '玩游戏', '即使通信、聊天', '在线教育课程','看短视频']
+          
+        },
+        xAxis: [
+
+        {
+      type: 'value',
+        name:'占比',
+      position: 'left',
+        axisLabel: {
+        formatter: '{value}%'
+      },
+}
+       ],
+
+        series: [
+          {
+            name:'占比',
+            type: 'bar',
+            xAxisIndex: 0,
+            data: [1.3, 1.5, 6.6, 6.7, 16.2,17.2,24.3]
+          }
+
+
+        ]
+      };
+
+      // 使用刚指定的配置项和数据显示图表。
+      myChart.setOption(option);
+    </script>
+
+
+
         <p>TikTok正迅速成为这个世界上最大的内容平台和流量基地之一。不仅大量年轻受众在该平台聚集，不同年龄段的受众注意力也逐渐转向短视频，而不再是新闻媒体所擅长的图文内容或严肃新闻报道。与受众注意力同步转移的还有广告收入和风险投资，它们同样流向了年轻用户更为关注的TikTok和Instagram平台。</p>
         <p>不仅如此，一种新的新闻业态正在兴起：“TikTok新闻业”。当新冠疫情、俄乌冲突等重大新闻事件发生时，人们发现，主要信息源不再是新闻媒体，而是TikTok。大量即时、一手的视频内容在TikTok迅速传播，后者逐渐从一个娱乐性短视频平台，转型成为包含音视频内容的综合型内容平台，并成为互联网用户获取资讯的重要途径。对许多年轻受众而言，他们不是不看新闻了，只是不在新闻媒体上看新闻了。类似现象在国内也同样显著。</p>
         <p>当新闻的主要载体从文字转向视频，这对绝大多数新闻媒体而言都是挑战。部分传统媒体积极求变，尝试融入短视频新闻生态。根据牛津大学路透新闻研究所发布的《2022年数字新闻报告》统计，约有一半（49%）的主流媒体机构会定期在TikTok上发布内容。作为老牌媒体代表，《华盛顿邮报》专门聘请第三方团队为自家TikTok账号制作内容；《洛杉矶时报》则组建了一个名为“404”的内容团队，基于年轻受众偏好进行实验性质的内容生产。</p>
@@ -582,7 +696,7 @@ Aylien(新闻源情感分析和文章生成工具)、Articoolo(新闻源自动�
 <p>AIGC凭借强大的内容生成能力，有望实现一场新闻业的“供给侧改革”。但就现实应用情况来看，“改革”还为时尚早，目前ChatGPT等工具主要用于提升内容生产的效率，是自动化报道的“升级版本”。由于其仍不具备共情、思考、常识判断等基础能力，AIGC并不能真正用于深度报道的撰写，而是在特定的领域如体育、股票方面，以及“边角料”如测验内容的生成方面有所应用。</p>
 <p>正如中国信通院云大所人工智能部副主任曹峰所评价，ChatGPT目前仍然无法代替具有高要求、高限定场景下的写作需求。从业界实践也可以看出，在ChatGPT大火之后，虽然不少媒体机构都进行了相关尝试，但并没有哪家权威媒体真正将ChatGPT应用于新闻报道的生产流程中。包括我们的调研结果也显示，仅有38.1%的新闻媒体机构，正在积极使用类似ChatGPT这样的AIGC工具。</p>
 
-<div id="057e44e0866249fabac611f54cdd72f8" class="chart-container" style="width: 840px;; height: 490px; "></div>
+<div id="057e44e0866249fabac611f54cdd72f8" class="chart-container" style="width: 830px;; height: 490px; "></div>
     <script>
         var chart_057e44e0866249fabac611f54cdd72f8 = echarts.init(
             document.getElementById('057e44e0866249fabac611f54cdd72f8'), 'white', {renderer: 'canvas'});
@@ -876,8 +990,6 @@ Aylien(新闻源情感分析和文章生成工具)、Articoolo(新闻源自动�
         <br>
         行行查
         <br>
-        CodePen-Matthias Hurrle
-        <br>
         <br>
         <br>
     </div>
@@ -900,13 +1012,13 @@ Aylien(新闻源情感分析和文章生成工具)、Articoolo(新闻源自动�
         console.log(delta);
             if (delta > 0 ) {
                 //向下滚动
-                nowlc-=70;
+                nowlc-=100;
                   mydiv.style.top=nowlc+'px';
                 
             }
             if (delta < 0 ) {
                 //向上滚动
-                nowlc+=70;
+                nowlc+=100;
                  mydiv.style.top=nowlc+'px';
             }
     }
